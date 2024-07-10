@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-    const repoOwner = 'pappykojo';
-    const repoName = 'pappykojo.github.io';
+    const repoOwner = 'nasbox';
+    const repoName = 'nasbox.github.io';
     const branchName = 'main';
 
     const fileListElement = document.getElementById('fileList');
