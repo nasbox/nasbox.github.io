@@ -3,19 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Repository File List</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Repository File Viewer</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+        .folder {
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .file {
+            margin-left: 20px;
+        }
+        .nested {
+            display: none;
+            margin-left: 20px;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Files and Folders in Repository</h1>
+        <h1>Repository File Viewer</h1>
     </header>
     <main>
         <ul id="fileList"></ul>
     </main>
     <footer>
-        <p>&copy; 2024 My GitHub Pages Site</p>
+        <p>&copy; 2024 FYP_nasbox</p>
     </footer>
-    <script src="script.js"></script>
+
+<script src="script.js"></script>
 </body>
 </html>
