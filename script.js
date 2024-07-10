@@ -22,34 +22,46 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 data.sort((a, b) => a.name.localeCompare(b.name));
 
                 data.forEach((item, index) => {
-                    const listItem = document.createElement('li');
-                    const link = document.createElement('a');
-                    link.textContent = `${item.name}`;
-                    listItem.appendChild(link);
-                    
-
                     if (item.type === 'dir') {
-                        listItem.classList.add('folder');
+                        const listItem = document.createElement('li');
+                        const link = document.createElement('a');
+                        link.textContent = `${item.name}`;
                         link.href = '#';
+                        listItem.classList.add('folder');
+                        listItem.appendChild(link);
+
                         const newNestedList = document.createElement('ul');
                         newNestedList.classList.add('nested');
                         listItem.appendChild(newNestedList);
 
-                        // Recursively fetch and display folder contents
-                        fetchAndDisplayContents(item.path, newNestedList);
-                        
                         link.addEventListener('click', (e) => {
                             e.preventDefault();
+                            if (newNestedList.innerHTML === '') {
+                                fetchAndDisplayContents(item.path, newNestedList);
+                            }
                             newNestedList.style.display = newNestedList.style.display === 'none' ? 'block' : 'none';
                         });
 
                         parentElement.appendChild(listItem);
-                    } else {
-                        // Check if the file's path is not in processed folders
-                        if (!isFileInProcessedFolder(item.path)) {
-                            listItem.classList.add('file');
+                    } else if (item.type === 'file') {
+                        // Check if file is in the root of the repository
+                        if (path === '') {
+                            const listItem = document.createElement('li');
+                            const link = document.createElement('a');
+                            link.textContent = `${item.name}`;
                             link.href = item.html_url;
+                            listItem.classList.add('file');
+                            listItem.appendChild(link);
                             fileListElement.appendChild(listItem);
+                        } else {
+                            // Files within folders are appended to the folder's nested list
+                            const listItem = document.createElement('li');
+                            const link = document.createElement('a');
+                            link.textContent = `${item.name}`;
+                            link.href = item.html_url;
+                            listItem.classList.add('file');
+                            listItem.appendChild(link);
+                            parentElement.appendChild(listItem);
                         }
                     }
                 });
@@ -63,16 +75,5 @@ document.addEventListener('DOMContentLoaded', (event) => {
             });
     }
 
-    function isFileInProcessedFolder(filePath) {
-        // Check if filePath starts with any processed folder path
-        for (let folderPath of processedFolders) {
-            if (filePath.startsWith(folderPath)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     fetchAndDisplayContents('', folderListElement); // Start fetching from the root path
-
 });
