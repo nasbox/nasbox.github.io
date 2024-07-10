@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     const link = document.createElement('a');
                     link.textContent = `${item.name}`;
                     listItem.appendChild(link);
+                    
 
                     if (item.type === 'dir') {
                         listItem.classList.add('folder');
