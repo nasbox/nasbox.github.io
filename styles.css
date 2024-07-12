@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+main {
+    padding: 2em;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+section {
+    margin-bottom: 2em; /* Adjust spacing between sections */
+}
+
+section h2 {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 0.5em 0;
+}
+
+ul a {
+    text-decoration: none;
+    color: #333;
+}
+
+ul a:hover {
+    text-decoration: underline;
+}
+
+.folder {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.file {
+    margin-left: 20px;
+}
+
+.nested {
+    display: none;
+    margin-left: 20px;
+}

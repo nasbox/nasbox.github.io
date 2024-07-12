@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repository File Viewer</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+        .folder {
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .file {
+            margin-left: 20;
+        }
+        .nested {
+            display: none;
+            margin-left: 20;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Repository File Viewer</h1>
+    </header>
+    <main>
+        <section id="folders">
+            <h2>Folders</h2>
+            <ul id="folderList"></ul>
+        </section>
+        <section id="files">
+            <h2>Files</h2>
+            <ul id="fileList"></ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 FYP_nasbox</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
