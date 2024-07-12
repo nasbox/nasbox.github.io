@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                             const listItem = document.createElement('li');
                             const link = document.createElement('a');
                             link.textContent = `${item.name}`;
-                            link.href = item.html_url;
+                            link.href = item.download_url;;
                             listItem.classList.add('file');
                             listItem.appendChild(link);
                             fileListElement.appendChild(listItem);
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                             const listItem = document.createElement('li');
                             const link = document.createElement('a');
                             link.textContent = `${item.name}`;
-                            link.href = item.html_url;
+                            link.href = item.download_url;
                             listItem.classList.add('file');
                             listItem.appendChild(link);
                             parentElement.appendChild(listItem);
