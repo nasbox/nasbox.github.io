@@ -5,17 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Repository File Viewer</title>
     <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <style>
         .folder {
             font-weight: bold;
             cursor: pointer;
         }
-        .file {
-            margin-left: 20;
+        .file {a
+            margin-left: 20px; /* Added px unit */
         }
         .nested {
             display: none;
-            margin-left: 20;
+            margin-left: 20px; /* Added px unit */
+        }
+        /* Inline header styles */
+        header {
+            background-color: var(--jet); /* Adjusted background color */
+            color: var(--orange-yellow-crayola); /* Adjusted text color */
+            text-align: center;
+            padding: 15px;
+        }
+        /* Inline section title styles */
+        h2 {
+            color: var(--white-2); /* Adjusted title color */
+            font-size: var(--fs-2); /* Adjusted font size */
+            margin-bottom: 10px;
+        }
+
+        /* Inline footer styles */
+        footer {
+            background-color: hsl(240, 2%, 13%); /* Adjusted background color */
+            color: hsl(45, 100%, 72%); /* Adjusted text color */
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
@@ -28,6 +54,7 @@
             <h2>Folders</h2>
             <ul id="folderList"></ul>
         </section>
+        
         <section id="files">
             <h2>Files</h2>
             <ul id="fileList"></ul>
