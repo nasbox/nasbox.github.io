@@ -37,6 +37,16 @@ This document provides an overview of the NAS (Network Attached Storage) system,
    - Access the OMV web interface via `http://172.10.20.5:81` in your browser.
    - Follow the setup wizard to configure storage, users, and shared folders.
 
+**Install and Configure FileBrowser Plugin:**
+   - Open a terminal and run the following commands to install FileBrowser:
+     ```sh
+     wget -qO- https://filebrowser.org/install.sh | bash
+     filebrowser -p 3670
+     ```
+   - Access the FileBrowser web interface via `http://172.10.20.5:3670` in your browser.
+   - Set up your FileBrowser configuration, users, and directories.
+
+
 ## Usage
 
 1. **Accessing Shared Folders:**
